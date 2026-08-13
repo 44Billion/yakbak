@@ -1,6 +1,7 @@
 import { NostrEvent, NPool, NRelay1 } from '@nostrify/nostrify';
 import { NostrContext } from '@nostrify/react';
 import React, { useRef } from 'react';
+import { AutoLogin } from '@/components/AutoLogin';
 
 interface NostrProviderProps {
   children: React.ReactNode;
@@ -29,6 +30,7 @@ const NostrProvider: React.FC<NostrProviderProps> = (props) => {
 
   return (
     <NostrContext.Provider value={{ nostr: pool.current }}>
+      <AutoLogin />
       {children}
     </NostrContext.Provider>
   );
